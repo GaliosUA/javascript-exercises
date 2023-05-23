@@ -5,21 +5,11 @@ const findTheOldest = function(people) {
 };
 
 function compare(a, b) {
+  if (isNaN(a.age)) a.age = 2023 - a.yearOfBirth;
+  if (isNaN(b.age)) b.age = 2023 - b.yearOfBirth;
   if (a.age < b.age) return 1; 
   if (a.age == b.age) return 0; 
   if (a.age > b.age) return -1;
-  if (isNaN(a.age)) {
-    a.age = 2023 - a.yearOfBirth;
-    if (a.age < b.age) return 1; 
-    if (a.age == b.age) return 0; 
-    if (a.age > b.age) return -1;
-  } 
-  if (isNaN(b.age)) {
-    b.age = 2023 - b.yearOfBirth;
-    if (a.age < b.age) return 1; 
-    if (a.age == b.age) return 0; 
-    if (a.age > b.age) return -1;
-  }
 };
 
 // Do not edit below this line
